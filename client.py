@@ -8,7 +8,7 @@ import streamlit as st
 class StockApi:
  
     def __init__(self , api_key):
-        self.api_key = st.secrets("API_KEY")
+        self.api_key = st.secrets["API_KEY"]
         self.url = "https://alpha-vantage.p.rapidapi.com/query"
         self.headers = {"x-rapidapi-key": api_key,
         "x-rapidapi-host": "alpha-vantage.p.rapidapi.com"}
