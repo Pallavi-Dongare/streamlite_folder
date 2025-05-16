@@ -4,7 +4,6 @@ import plotly.graph_objects as go
 import streamlit as st
  
  
- 
 class StockApi:
  
     def __init__(self , api_key):
@@ -22,9 +21,10 @@ class StockApi:
                                 params=querystring)
         response.raise_for_status()
         data = response.json()
-        symbol_list = []
+        symbol_list = {}
         for i in data['bestMatches']:
-            symbol_list.append(i['1. symbol'])
+            symbol=i['1. symbol']
+            symbol_list[symbol] = [i["2. name"] ,i["4. region"]]
         return symbol_list
    
    
@@ -66,3 +66,4 @@ class StockApi:
             increasing_line_color='green',
             decreasing_line_color='red')])
         fig.show()
+ 
