@@ -37,3 +37,8 @@ if company:
             st.plotly_chart(fig, use_container_width=True)
     else:
         st.warning("No matching company found.")
+
+
+
+#### python -m streamlit run app.py
+ 
