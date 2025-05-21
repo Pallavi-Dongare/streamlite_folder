@@ -45,3 +45,6 @@ if company:
     company_data = get_symbol(company)
     symbols = list(company_data.keys())
     options = st.selectbox("select symbols",symbols)
+    selected_data = company_data.get(options)
+    st.success(f"Company Name:{selected_data[0]}")
+    st.success(f"Region:{selected_data[1]}")
